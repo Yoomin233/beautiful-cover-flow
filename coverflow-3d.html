@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>coverflow-demo</title>
 	<style>
-		div.wrapper{
+		div.innerWrapper{
 			perspective: 300px;
 			width: 600px;
 			height: 300px;
@@ -47,18 +47,24 @@
 		div.cover:nth-child(7){
 			background-image: url('cover/tumblr_inline_nydppi1Mp91t7tdyh_500.jpg');
 		}
+		button[required='required']{
+			background-color: #000; 
+		}
 	</style>
 </head>
 <body>
-	<div class="wrapper">
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
+	<div class='container'>
+		<div class="innerWrapper">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
 	</div>
+	<button required='required'>222</button>
 	<script>
 	;(function(parent){
 		var cards = parent.querySelectorAll('div'), coverCount = cards.length, middleIndex = (coverCount-1)/2, middleCover = cards[middleIndex], parentWidth = middleCover.parentNode.clientWidth, currentIndex = middleIndex; 
@@ -112,7 +118,7 @@
 				move('left'); 
 			}
 		})
-	})(document.querySelector('.wrapper')); 
+	})(document.querySelector('.innerWrapper')); 
 	</script>
 </body>
 </html>
